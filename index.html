@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+<body>
+<h1>exo1</h1>
+<a href="page2.html">page2</a>
+<h2>exo2</h2>
+<button id="btn">bouton <span id="spanitude">à cliquer</span></button>
+<h1>exo3</h1>
+<a href="page3.html">exo3</a>
+<script>
+    //EXO1
+    localStorage.setItem("colorname", 'black');
+    localStorage.setItem("colorhex", '#000000');
+
+    //EXO2
+    var gunter = localStorage.getItem('counter');
+    if(gunter){
+        document.getElementById('spanitude').innerHTML = "cliqué " + gunter + "fois";
+    }
+    document.getElementById('spanitude').innerHTML = "cliqué " + gunter + "fois";
+
+    document.getElementById('btn').addEventListener("click", function () {
+
+        gunter ? gunter++ : (gunter =1);
+        localStorage.setItem('counter', gunter);
+        document.getElementById('spanitude').innerHTML = "cliqué " + gunter + "fois";
+    })
+</script>
+</body>
+</html>
